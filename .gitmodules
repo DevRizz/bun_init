@@ -1,0 +1,3 @@
+[submodule "bun_rest_api"]
+	path = bun_rest_api
+	url = https://github.com/DevRizz/bun_rest_api
