@@ -1,0 +1,1 @@
+Added a text file and then do operations like read, write, append in the index.ts file
