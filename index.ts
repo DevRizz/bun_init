@@ -46,6 +46,12 @@ const server = Bun.serve({
         );
       }
 
+      if(getURL.pathname === "/greet") {
+        return new Response(Bun.file("./greet.txt"), {
+            headers: { "Content-Type": "text/plain" },
+        })
+      }
+
       if(getURL.pathname === "/feed") {
         throw new Error("This is a sample error for testing error handling");
       }
