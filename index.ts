@@ -45,10 +45,19 @@ const server = Bun.serve({
           },
         );
       }
-      
+
+      if(getURL.pathname === "/feed") {
+        throw new Error("This is a sample error for testing error handling");
+      }
+
       return new Response("<h1>404 Not Found</h1>", {
         status: 404,
       });
+    },
+    error(err) {
+        return new Response (`<pre>${err.message} and \n ${err.stack}</pre>`, {
+            headers: { "Content-Type": "text/html" }
+        })
     }
   },
 );
